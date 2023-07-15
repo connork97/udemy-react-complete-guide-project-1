@@ -11,7 +11,9 @@ const NewExpense = ({ expenses, setExpenses }) => {
             ...newExpenseData,
             id: Math.random().toString()
         }
-        setExpenses([...expenses, expenseData])
+        setExpenses((prevState) => {
+            return [expenseData, ...prevState]
+        })
     }
 
     return (
